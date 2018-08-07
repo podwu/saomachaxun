@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0,maximum-scale=1,user-scalable=no">
+<link rel="stylesheet" href="../style/style.css">
+<title>号码查询-九江移动扫码查询</title>
+</head>
+<body id="bd_search">
+<div id="wrapper">
+	<header id="header" class="dark search">
+		<h1>九江移动扫码查询</h1>
+		<a href="message.html" class="btn msg"><i></i><em>消息</em><sup></sup></a>
+		<div class="search-box">
+			<input type="text" class="com-input keyword" placeholder="点此输入手机号码">
+			<button type="button" class="btn search"><em>查询</em></button>
+		</div>
+	</header>
+	<div id="main" class="search">
+		<div class="result-box">
+			<fieldset class="line-title">
+				<legend>他网查询</legend>
+			</fieldset>
+			<div class="main">
+				<div class="content">
+					<p>过网通话次数：465</p>
+					<p>匹配档次：100元</p>
+					<p>回网次月发一半，登记后的第四个月判断是否成功，不成功扣回已发部分，成功核发另一半</p>
+				</div>
+			</div>
+		</div>
+		<div class="result-box">
+			<fieldset class="line-title">
+				<legend>迁转目标客户</legend>
+			</fieldset>
+			<div class="main">
+				<div class="content">
+					<p>集团拍照客户;</p>
+					<p>现资费：飞享套餐2017版_88;</p>
+					<p>月均消费：0元；</p>
+					<p>MOU：53.33元；</p>
+					<p>迁移策略：1、日租卡送30分钟通话+200M流量。</p>
+				</div>
+			</div>
+		</div>
+		<div class="result-box">
+			<fieldset class="line-title">
+				<legend>查询结果</legend>
+			</fieldset>
+			<div class="main">
+				<i class="ico fail"></i>
+				<div class="content">
+					<p>没有找到任何结果!</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="../js/jquery.min.js"></script>
+<script>
+//表单提交测试
+$(".btn.search").on("click",function(){
+	showTip("测试！","toast",$("#header"));
+});
+
+//信息提示
+function showTip(tip,position,el,time){
+	if(!el){el=$("body");}
+	if(!time){time=1600;}
+	el.children(".com-tip").remove();
+	el.append("<div class='com-tip "+position+"'>"+tip+"</div>");
+	if(position=="toast"){
+		el.children(".com-tip").fadeIn(600)
+	}else{
+		el.children(".com-tip").slideDown(300);
+	}
+	var tipTimer;
+	clearTimeout(tipTimer);
+	tipTimer=setTimeout(function(){
+		if(position=="toast"){
+			el.children(".com-tip").fadeOut(600)
+		}else{
+			el.children(".com-tip").slideUp(300);
+		}
+	},time);
+}
+</script>
+</body>
+</html>
