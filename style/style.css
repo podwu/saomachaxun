@@ -702,9 +702,17 @@ fieldset.line-title>legend {
 .msg-box>a>dl {padding-right:20px;}
 .msg-box dt {font-weight:700;padding-bottom:8px;}
 .msg-box dd {color:#999;line-height:1.45;}
+.msg-box dd.content {
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+.msg-box dd.datetime {padding-top:4px;}
 .msg-box.new::before {
 	content:"";
-	position: absolute;top:23px;left:7px;
+	position: absolute;top:24px;left:7px;
 	width: 6px;height:6px;
 	border-radius: 6px;
 	background-color: #ff2626;

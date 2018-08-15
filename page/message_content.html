@@ -28,5 +28,25 @@
         </article>
 	</div>
 </div>
+<script>
+    pushHistory();
+    //var number=0;
+    window.addEventListener("popstate", function (e) {
+         alert("我监听到了浏览器的返回按钮事件啦"); //根据自己的需求实现自己的功能 
+        //number++;
+        //var p=document.createElement('p');
+       // p.innerHTML=number;
+        //document.getElementById('number').appendChild(p);
+       // pushHistory(); //注，此处调用，可以用户一直停留着这个页面
+    }, false);
+
+    function pushHistory() {
+        var state = {
+            title: "title",
+            url: "#"
+        };
+        window.history.pushState(state, "title", "#");
+    }
+</script>
 </body>
 </html>

@@ -18,7 +18,7 @@
 				<a href="message_content.html">
 				<dl>
 					<dt>消息标题</dt>
-					<dd class="content">消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容</dd>
+					<dd class="content">消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容</dd>
 					<dd class="datetime">2018-07-09 12:12</dd>
 				</dl>
 				</a>
@@ -44,5 +44,21 @@
 		</div>
 	</div>
 </div>
+<script>
+var hiddenProperty = 'hidden' in document ? 'hidden' :   
+    'webkitHidden' in document ? 'webkitHidden' :   
+    'mozHidden' in document ? 'mozHidden' :   
+    null;
+
+var visibilityChangeEvent = hiddenProperty.replace(/hidden/i, 'visibilitychange');
+var onVisibilityChange = function(){
+    if (!document[hiddenProperty]) {   
+        console.log('页面非激活');
+    }else{
+        console.log('页面激活')
+    }
+}
+document.addEventListener(visibilityChangeEvent, onVisibilityChange);
+</script>
 </body>
 </html>
